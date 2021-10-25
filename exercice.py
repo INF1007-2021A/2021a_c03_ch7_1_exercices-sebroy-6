@@ -4,11 +4,16 @@
 from collections import deque
 
 
-def get_fibonacci_number(TODO):
-	pass
+def get_fibonacci_number(i):
 
-def get_fibonacci_sequence(TODO):
-	pass
+	return 0 if i == 0 else 1 if i == 1 else get_fibonacci_number(i-1) + get_fibonacci_number(i-2)
+
+def get_fibonacci_sequence(i):
+	sequence = [0, 1]
+	for index in range(i-2):
+		sequence.append(sequence[-2] + sequence[-1])
+
+	return [0] if i == 1 else sequence
 
 def get_sorted_dict_by_decimals(TODO):
 	pass
@@ -29,7 +34,7 @@ if __name__ == "__main__":
 	print(get_fibonacci_sequence(2))
 	print(get_fibonacci_sequence(10))
 	print()
-
+"""
 	spam = {
 		2: 2.1,
 		3: 3.3,
@@ -63,3 +68,4 @@ if __name__ == "__main__":
 	print(f"Perrin : {[elem for elem in perrin(10)]}")
 	hofstadter_q = build_recursive_sequence_generator(TODO)
 	print(f"Hofstadter-Q : {[elem for elem in hofstadter_q(10)]}")
+"""
